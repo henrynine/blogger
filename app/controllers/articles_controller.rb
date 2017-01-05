@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
   end
 
   def fnotice verb
-    flash.notice = "Article '#{@article.title}' '#{verb}''"
+    flash.notice = "Article '#{@article.title}' #{verb}"
   end
 
 end
