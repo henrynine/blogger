@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  before_filter :require_login, except: [:index, :show]
 
   include ArticlesHelper
 
@@ -47,6 +46,10 @@ class ArticlesController < ApplicationController
     fnotice "Updated"
 
     redirect_to article_path(@article)
+  end
+
+  def fnotice verb
+    flash.notice = "Article '#{@article.title}' #{verb}"
   end
 
 end
